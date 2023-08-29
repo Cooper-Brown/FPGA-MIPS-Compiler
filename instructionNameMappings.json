@@ -1,0 +1,114 @@
+{
+  "sll": {
+    "opcode": "000000",
+    "funct": "000000",
+    "parseType": "shiftInstructionConst"
+  },
+  "srl": {
+    "opcode": "000000",
+    "funct": "000001",
+    "parseType": "shiftInstructionConst"
+  },
+  "sra": {
+    "opcode": "000000",
+    "funct": "000011",
+    "parseType": "shiftInstructionConst"
+  },
+  "sllv": {
+    "opcode": "000000",
+    "funct": "000100",
+    "parseType": "shiftInstructionReg"
+  },
+  "srlv": {
+    "opcode": "000000",
+    "funct": "000101",
+    "parseType": "shiftInstructionReg"
+  },
+  "srav": {
+    "opcode": "000000",
+    "funct": "000111",
+    "parseType": "shiftInstructionReg"
+  },
+
+  "mfhi": {
+    "opcode": "000000",
+    "funct": "010000",
+    "parseType": "mulDivMfInstruction"
+  },
+  "mthi": {
+    "opcode": "000000",
+    "funct": "010001",
+    "parseType": "mulDivMtInstruction"
+  },
+  "mflo": {
+    "opcode": "000000",
+    "funct": "010010",
+    "parseType": "mulDivMfInstruction"
+  },
+  "mtlo": {
+    "opcode": "000000",
+    "funct": "010011",
+    "parseType": "mulDivMtInstruction"
+  },
+  "mult": {
+    "opcode": "000000",
+    "funct": "011000",
+    "parseType": "mulDivInstruction"
+  },
+  "div": {
+    "opcode": "000000",
+    "funct": "011010",
+    "parseType": "mulDivInstruction"
+  },
+
+  "add": {
+    "opcode": "000000",
+    "funct": "100000",
+    "parseType": "aluInstruction"
+  },
+  "addu": {
+    "opcode": "000000",
+    "funct": "100001",
+    "parseType": "aluInstruction"
+  },
+  "sub": {
+    "opcode": "000000",
+    "funct": "100010",
+    "parseType": "aluInstruction"
+  },
+  "subu": {
+    "opcode": "000000",
+    "funct": "100011",
+    "parseType": "aluInstruction"
+  },
+  "and": {
+    "opcode": "000000",
+    "funct": "100100",
+    "parseType": "aluInstruction"
+  },
+  "or": {
+    "opcode": "000000",
+    "funct": "100101",
+    "parseType": "aluInstruction"
+  },
+  "xor": {
+    "opcode": "000000",
+    "funct": "100110",
+    "parseType": "aluInstruction"
+  },
+  "nor": {
+    "opcode": "000000",
+    "funct": "100111",
+    "parseType": "aluInstruction"
+  },
+  "slt": {
+    "opcode": "000000",
+    "funct": "101010",
+    "parseType": "aluInstruction"
+  },
+  "sltu": {
+    "opcode": "000000",
+    "funct": "101011",
+    "parseType": "aluInstruction"
+  }
+}
