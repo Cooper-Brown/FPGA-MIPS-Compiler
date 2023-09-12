@@ -66,7 +66,12 @@ def decodeInstruction(tokens, instructionNameMappingsDictionary, registerConstan
     else:
         raise Exception("Error: Could not parse the instruction correctly.")
 
-    instructionBinaryString = opcodeBin + rsBin + rtBin + rdBin + shamtBin + functBin
+    # INSTRUCTIONS NEEDS TO BE IN FORMAT (OP - RS - RT - RD)
+    # RS SHOULD BE RD
+    # RT SHOULD BE RS
+    # RD SHOULD BE RT
+    # THIS HAS BEEN REARRANGED FOR THE FOLLOWING LINE
+    instructionBinaryString = opcodeBin + rtBin + rdBin + rsBin + shamtBin + functBin
     return format(int(instructionBinaryString, 2), "008x")
 
 def main(args):
