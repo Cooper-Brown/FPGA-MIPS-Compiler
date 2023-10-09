@@ -10,14 +10,14 @@ def decodeInstruction(tokens, instructionNameMappingsDictionary, registerConstan
 
     if (parseType == "aluInstruction") or (parseType == "shiftInstructionReg"):
         # rs
-        rsDec = registerConstantMappingsDictionary[tokens[1].translate( { ord(","): None } )]
-        rsBin = format(int(rsDec, 10), "005b")
+        rdDec = registerConstantMappingsDictionary[tokens[1].translate( { ord(","): None } )]
+        rdBin = format(int(rsDec, 10), "005b")
         # rt
-        rtDec = registerConstantMappingsDictionary[tokens[2].translate( { ord(","): None } )]
-        rtBin = format(int(rtDec, 10), "005b")
+        rsDec = registerConstantMappingsDictionary[tokens[2].translate( { ord(","): None } )]
+        rsBin = format(int(rtDec, 10), "005b")
         # rd
-        rdDec = registerConstantMappingsDictionary[tokens[3].translate( { ord(","): None } )]
-        rdBin = format(int(rdDec, 10), "005b")
+        rtDec = registerConstantMappingsDictionary[tokens[3].translate( { ord(","): None } )]
+        rtBin = format(int(rdDec, 10), "005b")
         # shamt
         shamtBin = format(int("0", 2), "005b")
     elif parseType == "shiftInstructionConst":
@@ -66,12 +66,7 @@ def decodeInstruction(tokens, instructionNameMappingsDictionary, registerConstan
     else:
         raise Exception("Error: Could not parse the instruction correctly.")
 
-    # INSTRUCTIONS NEEDS TO BE IN FORMAT (OP - RS - RT - RD)
-    # RS SHOULD BE RD
-    # RT SHOULD BE RS
-    # RD SHOULD BE RT
-    # THIS HAS BEEN REARRANGED FOR THE FOLLOWING LINE
-    instructionBinaryString = opcodeBin + rtBin + rdBin + rsBin + shamtBin + functBin
+    instructionBinaryString = opcodeBin + rsBin + rtBin + rdBin + shamtBin + functBin
     return format(int(instructionBinaryString, 2), "008x")
 
 def main(args):
