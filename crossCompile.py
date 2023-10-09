@@ -11,13 +11,13 @@ def decodeInstruction(tokens, instructionNameMappingsDictionary, registerConstan
     if (parseType == "aluInstruction") or (parseType == "shiftInstructionReg"):
         # rs
         rdDec = registerConstantMappingsDictionary[tokens[1].translate( { ord(","): None } )]
-        rdBin = format(int(rsDec, 10), "005b")
+        rdBin = format(int(rdDec, 10), "005b")
         # rt
         rsDec = registerConstantMappingsDictionary[tokens[2].translate( { ord(","): None } )]
-        rsBin = format(int(rtDec, 10), "005b")
+        rsBin = format(int(rsDec, 10), "005b")
         # rd
         rtDec = registerConstantMappingsDictionary[tokens[3].translate( { ord(","): None } )]
-        rtBin = format(int(rdDec, 10), "005b")
+        rtBin = format(int(rtDec, 10), "005b")
         # shamt
         shamtBin = format(int("0", 2), "005b")
     elif parseType == "shiftInstructionConst":
