@@ -21,14 +21,15 @@ def decodeInstruction(tokens, instructionNameMappingsDictionary, registerConstan
         # shamt
         shamtBin = format(int("0", 2), "005b")
     elif parseType == "shiftInstructionConst":
-        # rs
-        rsBin = format(int("0", 2), "005b")
-        # rt
-        rtDec = registerConstantMappingsDictionary[tokens[1].translate( { ord(","): None } )]
-        rtBin = format(int(rtDec, 10), "005b")
         # rd
-        rdDec = registerConstantMappingsDictionary[tokens[2].translate({ord(","): None})]
+        rdDec = registerConstantMappingsDictionary[tokens[1].translate({ord(","): None})]
         rdBin = format(int(rdDec, 10), "005b")
+        # rs
+        rsDec = registerConstantMappingsDictionary[tokens[2].translate({ord(","): None})]
+        rsBin = format(int(rsDec, 10), "005b")
+        # rt
+        rtBin = format(int("0", 2), "005b")
+
         # shamt
         shamtDec = tokens[3].translate({ord(","): None})
         shamtBin = format(int(shamtDec, 10), "005b")
@@ -64,7 +65,7 @@ def decodeInstruction(tokens, instructionNameMappingsDictionary, registerConstan
         # shamt
         shamtBin = format(int("0", 2), "005b")
     else:
-        raise Exception("Error: Could not parse the instruction correctly.")
+        raise Exception(f"Error: Invalid parse type {parseType} Could not parse the instruction correctly.")
 
     instructionBinaryString = opcodeBin + rsBin + rtBin + rdBin + shamtBin + functBin
     return format(int(instructionBinaryString, 2), "008x")

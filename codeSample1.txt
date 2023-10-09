@@ -1,5 +1,29 @@
-add $s2, $s1, $s0
-addu $s3, $s1, $s0
-sub $s4, $s1, $s0
-subu $s5, $s1, $s0
-subu $s6, $s1, $s0
+sll $a1, $s0, 3
+srl $a1, $s0, 4
+sra $a1, $s0, 5
+sllv $a0, $s1, $t8
+srlv $a0, $s1, $t8
+srav $a0, $s1, $t8
+nor $v1, $0, $0
+mtlo $s0
+mflo $t1
+mthi $s1
+mfhi $t0
+mult $s2 $s3
+mfhi $t2
+mflo $t3
+div $s4 $s5
+mfhi $t4
+mflo $t5
+nor $v1, $0, $0
+add $v0, $t8, $t9
+addu $v0, $t8, $t9
+sub $v0, $t9, $t8
+subu $v0, $t9, $t8
+or $v0, $k1, $k0
+nor $v0, $k1, $k0
+xor $v0, $k1, $k0
+and $v0, $k1, $k0
+slt $v0, $t9, $t8
+slt $v0, $t8, $t9
+nor $v1, $0, $0
